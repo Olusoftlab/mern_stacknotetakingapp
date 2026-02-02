@@ -30,7 +30,7 @@ app.use(myLimiter)
 app.use("/api/notes", notesRoutes)
 
 
-console.log("hello world")
+console.log("hello world you are welcome")
 
 if (process.env.NODE_ENV === "production") {
 
