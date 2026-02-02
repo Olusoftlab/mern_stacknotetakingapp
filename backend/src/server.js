@@ -30,6 +30,8 @@ app.use(myLimiter)
 app.use("/api/notes", notesRoutes)
 
 
+console.log("hello world")
+
 if (process.env.NODE_ENV === "production") {
 
    app.use(express.static(path.join(__dirname, "../frontend/dist")))
