@@ -58,7 +58,7 @@ if (process.env.NODE_ENV === "production") {
 //     res.send("this is my home route") 
 // })
 
-
+console.log("hello world")
 
 
 connectDb().then(() => {
