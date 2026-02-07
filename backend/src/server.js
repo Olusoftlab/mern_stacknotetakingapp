@@ -11,10 +11,15 @@ dotenv.config()
 const app = express()
 app.use(express.json())
 
+
 if (process.env.NODE_ENV !== "production") {
 
    app.use(cors({ origin: "http://localhost:5173" }))
+
 }
+
+
+
 
 
 
@@ -30,19 +35,20 @@ app.use(myLimiter)
 app.use("/api/notes", notesRoutes)
 
 
-console.log("hello world you are welcome")
-
 if (process.env.NODE_ENV === "production") {
 
    app.use(express.static(path.join(__dirname, "../frontend/dist")))
 
-   app.get("/{*splat}", (req, res) => {
+
+   app.all("/{*splat}", (req, res) => {
 
       res.sendFile(path.join(__dirname, "../frontend", "dist", "index.html"))
 
    })
 
 }
+
+
 
 
 
